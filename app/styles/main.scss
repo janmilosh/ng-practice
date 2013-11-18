@@ -1,0 +1,91 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body {
+    background: #333;
+}
+
+body, p, ul li {
+    color: #ddd;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    margin: 20px 0;
+    color: #A3BECE;
+}
+
+header {
+    background: #181818;
+}
+
+nav {
+    background: #000;
+}
+
+.menu-container {
+    background: #000;
+    margin: 0;
+    .col-sm-12 {
+        padding: 0;
+    }
+}
+
+.nav {
+    margin: 15px 0;
+}
+
+nav a {
+    color: #A3BECE;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #A3BECE;
+}
+
+.outer {
+    background: #666;
+}
+.inner {
+    display: table-row;
+}
+.inner h1 {
+    color: #eee;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 32px;
+    display: table-cell;
+    vertical-align: middle; 
+}
+.vert { 
+    display: table-cell;
+    vertical-align: middle;
+}
+.slide-out-button {
+    background: #A3BECE;
+    margin: 20px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    p {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #slideout {
+        display: none;
+    }
+    nav {
+        display: none;
+    }
+   
+}
