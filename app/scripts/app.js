@@ -39,7 +39,7 @@ angular.module('app')
     return {
       link: function() {
         var date = new Date().getFullYear();
-        $('footer p').html(' Jan Milosh &copy;' + date);
+        $('.copyright').html(' Jan Milosh &copy;' + date);
       }
     };
   }])
