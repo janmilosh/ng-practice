@@ -21,13 +21,19 @@ angular.module('app')
   .directive('slideOutButton', [function slideOutFactory() {
     return {
       link: function (scope, ele) {
-        var slideOut = $('#slideout');
+        var slideOut = $('.slideout');
+        var button = $('.slide-out-button');
+        
         ele.click(function () {
-          slideOut.slideToggle(1000);
+          $(this).closest('.slideout-segment')
+            .children('.slideout')
+            .slideToggle(1000);
+          ele.toggleClass('opened');
         });
         $(window).resize(function() {
+           button.removeClass('opened');
           if($(window).width() < 767) {
-            slideOut.css('display', 'none');
+            slideOut.css('display', 'none');           
           } else {
             slideOut.css('display', 'block');
           }

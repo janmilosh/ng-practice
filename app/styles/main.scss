@@ -83,10 +83,13 @@ nav a {
 
 .outer {
     background: #666;
+    margin: 15px -15px;
 }
+
 .inner {
     display: table-row;
 }
+
 .inner h1 {
     color: #eee;
     width: 100%;
@@ -96,16 +99,23 @@ nav a {
     display: table-cell;
     vertical-align: middle; 
 }
+
 .vert { 
     display: table-cell;
     vertical-align: middle;
 }
+
 .slide-out-button {
     background: #A3BECE;
     margin: 20px;
     height: 70px;
     width: 70px;
-    border-radius: 50%;
+    border-radius: 50%;    
+}
+
+
+.opened.slide-out-button {
+    background: #CE5D39;
 }
 
 footer {
@@ -119,7 +129,7 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-    #slideout {
+    .slideout {
         display: none;
     }
     nav {
