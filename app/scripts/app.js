@@ -17,6 +17,20 @@ angular.module('app', [
       });
   });
 
+// function news($http) { 
+//   $http({method: 'GET', url: 'http://jan.cyberkitty.net/?json=get_recent_posts'}).
+//     success(function(data, status, headers, config) {
+//       console.log("It worked!!");
+//       // this callback will be called asynchronously
+//       // when the response is available
+//     }).
+//     error(function(data, status, headers, config) {
+//       console.log("There's been an error!!!");
+//       // called asynchronously if an error occurs
+//       // or server returns response with an error status.
+//     });
+// }
+
 angular.module('app')
   .directive('slideOutButton', [function slideOutFactory() {
     return {
