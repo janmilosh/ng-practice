@@ -6,7 +6,7 @@ angular.module('app', [
     'ngSanitize',
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -15,23 +15,22 @@ angular.module('app', [
       .otherwise({
         redirectTo: '/'
       });
-  });
-
-// function news($http) { 
-//   $http({method: 'GET', url: 'http://jan.cyberkitty.net/?json=get_recent_posts'}).
-//     success(function(data, status, headers, config) {
-//       console.log("It worked!!");
-//       // this callback will be called asynchronously
-//       // when the response is available
-//     }).
-//     error(function(data, status, headers, config) {
-//       console.log("There's been an error!!!");
-//       // called asynchronously if an error occurs
-//       // or server returns response with an error status.
-//     });
-// }
-
-angular.module('app')
+  }])
+  .controller('news', ['$scope', '$http', '$log', function($scope, $http, $log) {
+    $http.defaults.useXDomain = true;
+    $http({method: 'GET', url: 'http://jan.cyberkitty.net/?json=get_recent_posts'})
+    .success(function(data, status, headers, config) {
+      $scope.news = data;
+      console.log('It worked!!');
+      // this callback will be called asynchronously
+      // when the response is available
+    })
+    .error(function(data, status, headers, config) {
+      console.log('There\'s been an error!!!');
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });
+  }])
   .directive('slideOutButton', [function slideOutFactory() {
     return {
       link: function (scope, ele) {
@@ -45,9 +44,9 @@ angular.module('app')
           ele.toggleClass('opened');
         });
         $(window).resize(function() {
-           button.removeClass('opened');
+          button.removeClass('opened');
           if($(window).width() < 767) {
-            slideOut.css('display', 'none');           
+            slideOut.css('display', 'none');      
           } else {
             slideOut.css('display', 'block');
           }
@@ -107,9 +106,3 @@ angular.module('app')
       }
     };
   }]);
-
-  
-
-
-
- 

@@ -2,7 +2,7 @@
 	<div class="container hidden-xs">
 		<div class="row">
 			<div class="col-sm-12">
-				<img class="img-responsive" src="../images/frostyleaves.jpg">
+				<img class="img-responsive" src="images/frostyleaves.jpg">
 			</div>
 		</div>
 	</div>
@@ -33,8 +33,15 @@
 	     			</div>
 					</div>
 				</div>
-				<div class="slideout">
+				<div ng-controller="news" class="slideout">
 					<h1 class="hidden-xs">News Updates</h1>
+					{{news.posts[0].slug}}
+					
+					<div ng-repeat="post in news.posts">
+						{{post.slug}}
+						<div ng-bind-html="post.content"></div>
+					</div>
+					
 					<p>Observe, I do not mean to suggest that the custom of lying has suffered any decay or interruption--no, for the Lie, as a Virtue, A Principle, is eternal; the Lie, as a recreation, a solace, a refuge in time of need, the fourth Grace, the tenth Muse, man's best and surest friend, is immortal, and cannot perish from the earth while this club remains. My complaint simply concerns the decay of the art of lying. No high-minded man, no man of right feeling, can contemplate the lumbering and slovenly lying of the present day without grieving to see a noble art so prostituted. In this veteran presence I naturally enter upon this theme with diffidence; it is like an old maid trying to teach nursery matters to the mothers in Israel. It would not become to me to criticise you, gentlemen--who are nearly all my elders--and my superiors, in this thing--if I should here and there seem to do it, I trust it will in most cases be more in a spirit of admiration than fault-finding; indeed if this finest of the fine arts had everywhere received the attention, the encouragement, and conscientious practice and development which this club has devoted to it, I should not need to utter this lament, or shred a single tear. I do not say this to flatter: I say it in a spirit of just and appreciative recognition. It had been my intention, at this point, to mention names and to give illustrative specimens, but indications observable about me admonished me to beware of the particulars and confine myself to generalities.
 					</p>
 				</div>

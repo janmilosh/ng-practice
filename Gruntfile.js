@@ -253,8 +253,9 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'images/{,*/}*.{gif,webp}',
-            'fonts/*'
+            'images/{,*/}*.{gif,webp,jpg,png}',
+            'fonts/*',
+            'icon-fonts/fonts/*'
           ]
         }, {
           expand: true,
@@ -287,7 +288,7 @@ module.exports = function (grunt) {
         'coffee',
         'compass:dist',
         'copy:styles',
-        'imagemin',
+        //'imagemin',
         'svgmin',
         'htmlmin'
       ]
@@ -357,7 +358,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'rev',
+    //'rev',
     'usemin'
   ]);
 
